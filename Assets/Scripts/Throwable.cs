@@ -31,7 +31,6 @@ public class Throwable : MonoBehaviour
         rb.velocity = Vector2.zero;
         rb.AddForce((screenToWorldPoint-transform.position)*force);
         transform.parent = null;
-        gameObject.layer = 6;
     }
 
     public void Freeze()
@@ -50,9 +49,15 @@ public class Throwable : MonoBehaviour
         {
             other.gameObject.GetComponent<Breakable>().Break();
         }
-        else
+    }
+
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.gameObject.CompareTag("Player"))
         {
-            gameObject.layer = 0;
+            col.gameObject.GetComponentInParent<PlayerController>().PickUp(this);
+            rb.isKinematic = true;
+            transform.parent = col.gameObject.transform;
         }
     }
 }
