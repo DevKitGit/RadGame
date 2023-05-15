@@ -32,12 +32,32 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float nudgeForce;
     [SerializeField] private Vector3 fallOffset;
     private SpriteRenderer characterSprite;
+    private CapsuleCollider2D collider2D;
 
+    public Vector2 standingOffset;
+    public Vector2 standingSize;
+    public Vector2 crawlingOffset;
+    public Vector2 crawlingSize;
+    public Vector2 rollingOffset;
+    public Vector2 rollingSize;
     private void Start()
     {
-        characterSprite = GetComponentsInChildren<SpriteRenderer>()[1];
+        collider2D = GetComponent<CapsuleCollider2D>();
+        characterSprite = GetComponent<SpriteRenderer>();
+        SetColliderSize();
     }
 
+    public void LaunchEvent()
+    {
+        anim.SetBool("jump",false);
+        anim.SetBool("land",false);
+        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+    }
+
+    public void LandEvent()
+    {
+        anim.SetBool("land",true);
+    }
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -47,7 +67,7 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         float moveInput = input.actions["Move"].ReadValue<float>();
-
+        
         facingRight = moveInput switch
         {
             1 => true,
@@ -62,7 +82,10 @@ public class PlayerController : MonoBehaviour
         {
             
         }
+        anim.SetBool("disabled",isDisabled);
+        anim.SetBool("inChair",isInWheelChair);
         anim.SetBool("walking",walking);
+        anim.SetBool("grounded",isGrounded);
         isGrounded = Physics2D.Raycast(transform.position, Vector2.down, groundedDistance, groundLayer);
         if (!canClimb)
         {
@@ -84,12 +107,45 @@ public class PlayerController : MonoBehaviour
             if (!isInWheelChair)
             {
                 MountChair();
+                SetColliderSize();
                 return;
             }
             DismountChair();
+            SetColliderSize();
             return;
         }
-        rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        anim.SetBool("jump",true);
+    }
+
+    public void SetColliderSize()
+    {
+        Vector2 size;
+        Vector2 offset;
+        collider2D.direction = CapsuleDirection2D.Vertical;
+        if (!isDisabled)
+        {
+            size = standingSize;
+            offset = standingOffset;
+            
+        }
+        else
+        {
+            if (isInWheelChair)
+            {
+                size = rollingSize;
+                offset = rollingOffset;
+            }
+            else
+            {
+                
+                collider2D.direction = CapsuleDirection2D.Horizontal;
+                size = crawlingSize;
+                offset = crawlingOffset;
+            }
+        }
+
+        collider2D.size = size;
+        collider2D.offset = offset;
     }
 
     public void OnFire()

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7745255eb6e9b0143bef812b4a290d12
+guid: 2d44e236b43f54e41802af8196cbcc2b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -107,13 +107,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: JumpAnim-Sheet_0
+      name: Crawling_anim_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 50
-        height: 100
+        width: 80
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,20 +121,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5acc5ddd9197b394badb25b40fa3af2c
-      internalID: -1720151833
+      spriteID: a68653144bba0614ca8ce617fc5bea17
+      internalID: 571945733
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JumpAnim-Sheet_1
+      name: Crawling_anim_1
       rect:
         serializedVersion: 2
-        x: 50
+        x: 80
         y: 0
-        width: 50
-        height: 100
+        width: 80
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -142,20 +142,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b5c197612e37c848ab4e41bec3bf721
-      internalID: 34265063
+      spriteID: 0c9ea72108182ce4a80cc002e68304a5
+      internalID: -1491308756
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JumpAnim-Sheet_2
+      name: Crawling_anim_2
       rect:
         serializedVersion: 2
-        x: 100
+        x: 160
         y: 0
-        width: 50
-        height: 100
+        width: 80
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -163,20 +163,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7325a8e938a0bdf48ba38e229cb013af
-      internalID: 1545950105
+      spriteID: 4fba3075d975eb14d8c980f195bb36e2
+      internalID: 418042833
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JumpAnim-Sheet_3
+      name: Crawling_anim_3
       rect:
         serializedVersion: 2
-        x: 150
+        x: 240
         y: 0
-        width: 50
-        height: 100
+        width: 80
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,20 +184,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ca1640710c29fd74eac4acfe86fa6c4c
-      internalID: -1903163374
+      spriteID: 0075939655f05c448a6aebba284ec0e9
+      internalID: -697443289
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JumpAnim-Sheet_4
+      name: Crawling_anim_4
       rect:
         serializedVersion: 2
-        x: 200
+        x: 320
         y: 0
-        width: 50
-        height: 100
+        width: 80
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -205,83 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: dc637d20f2c078b43b55b9d20278ed88
-      internalID: -1664052423
+      spriteID: 001ae1847636c1c4b99bb9857ad01201
+      internalID: 748150791
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JumpAnim-Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 250
-        y: 0
-        width: 50
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1a9d1154297c61d4e8b7f8c39141f4c1
-      internalID: -944118912
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: JumpAnim-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 300
-        y: 0
-        width: 50
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d5f67dcc37f89e04f96be4b506ea6b8a
-      internalID: -924248487
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: JumpAnim-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 350
-        y: 0
-        width: 50
-        height: 100
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 351d8c9a6a661524a819794bc2222f92
-      internalID: 643716935
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: JumpAnim-Sheet_8
+      name: Crawling_anim_5
       rect:
         serializedVersion: 2
         x: 400
         y: 0
-        width: 50
-        height: 100
+        width: 80
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -289,20 +226,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf18b265f9659cb4e87ebdd20c79ea9b
-      internalID: 350720421
+      spriteID: 8c22cab84290c8d459bf45e2f0753536
+      internalID: 1311522554
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JumpAnim-Sheet_9
+      name: Crawling_anim_6
       rect:
         serializedVersion: 2
-        x: 450
+        x: 480
         y: 0
-        width: 50
-        height: 100
+        width: 80
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -310,20 +247,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2485a49e43825147a4e8e834c693365
-      internalID: 141801051
+      spriteID: 0347bab275f4f4140bbccc31a54aa294
+      internalID: 1974833301
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: JumpAnim-Sheet_10
+      name: Crawling_anim_7
       rect:
         serializedVersion: 2
-        x: 500
+        x: 560
         y: 0
-        width: 50
-        height: 100
+        width: 80
+        height: 50
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,8 +268,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c4dfdb7435d6e6242a0ad4ca2d64352e
-      internalID: -1707307841
+      spriteID: 8fd1f448fa0175c4aaf9cbacadb23613
+      internalID: -1329584585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crawling_anim_8
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 80
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a174958760605b45b6be1586c4fe9af
+      internalID: -858747942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Crawling_anim_9
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 0
+        width: 80
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e59768511c7c4f4f8fecf5bdb829903
+      internalID: 481905847
       vertices: []
       indices: 
       edges: []
@@ -348,17 +327,16 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      JumpAnim-Sheet_3: -1903163374
-      JumpAnim-Sheet_6: -924248487
-      JumpAnim-Sheet_10: -1707307841
-      JumpAnim-Sheet_0: -1720151833
-      JumpAnim-Sheet_2: 1545950105
-      JumpAnim-Sheet_5: -944118912
-      JumpAnim-Sheet_8: 350720421
-      JumpAnim-Sheet_1: 34265063
-      JumpAnim-Sheet_9: 141801051
-      JumpAnim-Sheet_7: 643716935
-      JumpAnim-Sheet_4: -1664052423
+      Crawling_anim_5: 1311522554
+      Crawling_anim_9: 481905847
+      Crawling_anim_3: -697443289
+      Crawling_anim_7: -1329584585
+      Crawling_anim_4: 748150791
+      Crawling_anim_8: -858747942
+      Crawling_anim_2: 418042833
+      Crawling_anim_1: -1491308756
+      Crawling_anim_6: 1974833301
+      Crawling_anim_0: 571945733
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
