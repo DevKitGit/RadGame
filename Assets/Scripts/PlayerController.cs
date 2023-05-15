@@ -31,11 +31,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float groundedDistance;
     [SerializeField] private float nudgeForce;
     [SerializeField] private Vector3 fallOffset;
-
+    private SpriteRenderer characterSprite;
 
     private void Start()
     {
-        
+        characterSprite = GetComponentsInChildren<SpriteRenderer>()[1];
     }
 
     private void Awake()
@@ -47,19 +47,15 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         float moveInput = input.actions["Move"].ReadValue<float>();
-        
-        if (moveInput==1)
-        {
-            facingRight = true;
-        }
-        else if(moveInput ==-1)
-        {
-            facingRight = false;
-        }
 
-        float facing = facingRight ? -1 : 1;
-        transform.localScale = new Vector3(facing, 1, 1);
-        float ms = !isDisabled||isInWheelChair?fastSpeed:slowSpeed;
+        facingRight = moveInput switch
+        {
+            1 => true,
+            -1 => false,
+            _ => facingRight
+        };
+        characterSprite.flipX = facingRight;
+        float ms = !isDisabled || isInWheelChair ? fastSpeed : slowSpeed;
         rb.velocity = new Vector2(moveInput * ms, rb.velocity.y);
         bool walking = moveInput != 0;
         if (!isDisabled)
