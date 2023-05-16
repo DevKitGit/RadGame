@@ -33,7 +33,7 @@ public class PlatformButton : MonoBehaviour
 
    private void OnTriggerExit2D(Collider2D other)
    {
-      if (other.gameObject.CompareTag("Player"))
+      if (other.gameObject.CompareTag("Player")||other.gameObject.CompareTag("Chair"))
       {
          lifting = false;
       }

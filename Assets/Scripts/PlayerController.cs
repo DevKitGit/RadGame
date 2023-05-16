@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -43,7 +44,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool paused;
     public GameObject pauseScreen;
     [SerializeField] private int currentScene;
-
+    [SerializeField] private List<Stair> stairs;
+    [SerializeField] private GameObject throwText;
+    [SerializeField] private Collider2D fakeFloor;
+    
     private void Start()
     {
         collider2D = GetComponent<CapsuleCollider2D>();
@@ -70,6 +74,7 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        throwText.SetActive(hasThrowable);
         float moveInput = input.actions["Move"].ReadValue<float>();
         
         facingRight = moveInput switch
@@ -150,6 +155,25 @@ public class PlayerController : MonoBehaviour
 
         collider2D.size = size;
         collider2D.offset = offset;
+        if (isDisabled &&!isInWheelChair)
+        {
+            foreach (Stair stair in stairs)
+            {
+                stair.TurnOn();
+                
+            }
+
+            fakeFloor.enabled = false;
+        }
+        else
+        {
+            foreach (Stair stair in stairs)
+            {
+                stair.ShutOff();
+            }
+
+            fakeFloor.enabled = true;
+        }
     }
 
     public void OnFire()
