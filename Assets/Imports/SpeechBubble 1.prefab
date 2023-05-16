@@ -174,7 +174,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &1375039197007754658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,7 +353,7 @@ Transform:
   m_GameObject: {fileID: 8594450887711287846}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -37.779, y: -2.227, z: 18.801805}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1375039196251426069}
@@ -372,6 +372,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deaa638ac66ffeb48a25ba8f267ee6dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: Hello neighbour, lovely day right!
-  fadeout: 1
-  fadeoutTime: 5
+  audioClip: {fileID: 0}
