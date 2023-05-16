@@ -7,9 +7,11 @@ using UnityEngine;
 
 public class SpeechBubble : MonoBehaviour
 {
-    [SerializeField] private string text;
-    [SerializeField] private bool fadeout;
-    [SerializeField] private float fadeoutTime;
+    [SerializeField] private AudioClip audioClip;
+    
+    private string text = "";
+    private bool fadeout = false;
+    private float fadeoutTime = 1f;
     
     private float ticksPerSecond = 13f;
     private float bobbingSpeed = 1.5f;
@@ -23,6 +25,8 @@ public class SpeechBubble : MonoBehaviour
     private float bubbleStartHeight;
     private RectTransform canvasRectTransform;
     private float canvasStartHeight;
+    private AudioSource _audioSource;
+
     private void Start()
     {
         _spawnedSpeechBubble = transform.GetChild(0).gameObject;
@@ -33,11 +37,19 @@ public class SpeechBubble : MonoBehaviour
         canvasStartHeight = _spawnedSpeechBubble.GetComponentInChildren<Canvas>().GetComponent<RectTransform>().GetTop();
         _text.text = "";
         _spawnedSpeechBubble.SetActive(false);
-        
+        _audioSource = FindObjectOfType<AudioSource>();
     }
     [ContextMenu("StartTextAnimation")]
     public void StartTextAnimation()
     {
+        StartCoroutine(TypeText());
+    }
+    
+    public void StartTextAnimation(string text, bool fadeout, float fadeoutTime)
+    {
+        this.text = text;
+        this.fadeout = fadeout;
+        this.fadeoutTime = fadeoutTime;
         StartCoroutine(TypeText());
     }
     private IEnumerator TypeText()
@@ -57,10 +69,13 @@ public class SpeechBubble : MonoBehaviour
             _text.ForceMeshUpdate();
             _speechBubbleSpriteRenderer.size = new Vector2(_speechBubbleSpriteRenderer.size.x, bubbleStartHeight + spriteOffsetPerLine * math.max(_text.textInfo.lineCount-1,0));
             canvasRectTransform.SetTop(canvasStartHeight - canvasoffsetPerLine * math.max(_text.textInfo.lineCount-1,0));
-            if (letter.ToString() != " ")
+
+            if (letter.ToString() == " ") continue;
+            if (audioClip != null)
             {
-                yield return new WaitForSeconds(delay); // Wait for the specified time
+                _audioSource.PlayOneShot(audioClip);
             }
+            yield return new WaitForSeconds(delay); // Wait for the specified time
         }
 
         if (!fadeout) yield break;

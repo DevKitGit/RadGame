@@ -6,9 +6,12 @@ using UnityEngine;
 public class FollowPlayer : MonoBehaviour
 {
     [SerializeField] private Transform target;
-
+    [SerializeField] private float bottom, top;
     private void Update()
     {
-        transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
+        float clampedY = Mathf.Clamp(target.position.y, bottom, top);
+        
+        transform.position = new Vector3(target.position.x, clampedY, transform.position.z);
+        
     }
 }
