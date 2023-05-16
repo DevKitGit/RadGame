@@ -48,6 +48,7 @@ public class Throwable : MonoBehaviour
         }else if (other.gameObject.CompareTag("Breakable"))
         {
             other.gameObject.GetComponent<Breakable>().Break();
+            Destroy(gameObject);
         }
     }
 
