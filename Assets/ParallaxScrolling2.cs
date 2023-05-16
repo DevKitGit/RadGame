@@ -21,7 +21,7 @@ public class ParallaxScrolling2 : MonoBehaviour
         _startZ  = transform.position.z;
     }
 
-    void Update()
+    void LateUpdate()
     {
         Vector2 pos = _startPosition + Travel * ParallaxFactor;
         transform.position = new Vector3(pos.x, pos.y, _startZ);

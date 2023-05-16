@@ -200,7 +200,7 @@ public class PlayerController : MonoBehaviour
 
     private void MountChair()
     {
-        if (Vector2.Distance(transform.position,chair.transform.position)>2)
+        if (Vector2.Distance(transform.position,chair.GetComponent<BoxCollider2D>().bounds.center)>2)
         {
             print(Vector2.Distance(transform.position,chair.transform.position));
             return;
