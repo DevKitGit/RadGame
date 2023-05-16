@@ -40,6 +40,10 @@ public class PlayerController : MonoBehaviour
     public Vector2 crawlingSize;
     public Vector2 rollingOffset;
     public Vector2 rollingSize;
+    [SerializeField] private bool paused;
+    public GameObject pauseScreen;
+    [SerializeField] private int currentScene;
+
     private void Start()
     {
         collider2D = GetComponent<CapsuleCollider2D>();
@@ -219,5 +223,22 @@ public class PlayerController : MonoBehaviour
     {
         hasMilk = true;
         throwable1.transform.position = transform.position + milkAnchor;
+    }
+
+    public void OnPause()
+    {
+        paused = !paused;
+        Time.timeScale = paused ? 0 : 1;
+        pauseScreen.SetActive(paused);
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(currentScene);
+    }
+
+    public void QuitLevel()
+    {
+        SceneManager.LoadScene(0);
     }
 }
